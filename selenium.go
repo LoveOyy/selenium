@@ -257,6 +257,12 @@ type Actions []map[string]interface{}
 
 // WebDriver defines methods supported by WebDriver drivers.
 type WebDriver interface {
+	
+	// execute performs an HTTP request and inspects the returned data for an error
+	// encoded by the remote end in a JSON structure. If no error is present, the
+	// entire, raw request payload is returned.
+	Execute(method, url string, data []byte) (json.RawMessage, error) 
+
 	// Status returns various pieces of information about the server environment.
 	Status() (*Status, error)
 
