@@ -1,16 +1,18 @@
 package selenium
 
 import (
+	"encoding/json"
 	"time"
 
-	"github.com/tebeka/selenium/chrome"
-	"github.com/tebeka/selenium/firefox"
-	"github.com/tebeka/selenium/log"
+	"github.com/LoveOyy/selenium/chrome"
+	"github.com/LoveOyy/selenium/firefox"
+	"github.com/LoveOyy/selenium/log"
 )
 
 // TODO(minusnine): make an enum type called FindMethod.
 
 // Methods by which to find elements.
+const (
 const (
 	ByID              = "id"
 	ByXPATH           = "xpath"
@@ -257,11 +259,11 @@ type Actions []map[string]interface{}
 
 // WebDriver defines methods supported by WebDriver drivers.
 type WebDriver interface {
-	
+
 	// execute performs an HTTP request and inspects the returned data for an error
 	// encoded by the remote end in a JSON structure. If no error is present, the
 	// entire, raw request payload is returned.
-	Execute(method, url string, data []byte) (json.RawMessage, error) 
+	Execute(method, url string, data []byte) (json.RawMessage, error)
 
 	// Status returns various pieces of information about the server environment.
 	Status() (*Status, error)

@@ -17,9 +17,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/LoveOyy/selenium/firefox"
+	"github.com/LoveOyy/selenium/log"
 	"github.com/blang/semver"
-	"github.com/tebeka/selenium/firefox"
-	"github.com/tebeka/selenium/log"
 )
 
 // Errors returned by Selenium server.
@@ -127,11 +127,12 @@ func (e *Error) Error() string {
 func (wd *remoteWD) execute(method, url string, data []byte) (json.RawMessage, error) {
 	return executeCommand(method, url, data)
 }
+
 // execute performs an HTTP request and inspects the returned data for an error
 // encoded by the remote end in a JSON structure. If no error is present, the
 // entire, raw request payload is returned.
 func (wd *remoteWD) Execute(method, url string, data []byte) (json.RawMessage, error) {
-	return wd.execute(method,url,data)
+	return wd.execute(method, url, data)
 }
 func executeCommand(method, url string, data []byte) (json.RawMessage, error) {
 	debugLog("-> %s %s\n%s", method, filteredURL(url), data)

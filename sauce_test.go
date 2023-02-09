@@ -6,10 +6,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/LoveOyy/selenium"
+	"github.com/LoveOyy/selenium/internal/seleniumtest"
+	"github.com/LoveOyy/selenium/sauce"
 	"github.com/blang/semver"
-	"github.com/tebeka/selenium"
-	"github.com/tebeka/selenium/internal/seleniumtest"
-	"github.com/tebeka/selenium/sauce"
 )
 
 var (
