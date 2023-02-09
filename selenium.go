@@ -13,7 +13,6 @@ import (
 
 // Methods by which to find elements.
 const (
-const (
 	ByID              = "id"
 	ByXPATH           = "xpath"
 	ByLinkText        = "link text"
